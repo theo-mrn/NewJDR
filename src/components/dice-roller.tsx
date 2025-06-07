@@ -158,6 +158,44 @@ export function DiceRoller() {
     setEditingAlias(null);
   };
 
+  // Fonction pour formater les détails des dés
+  const formatDiceDetails = (roll: DiceRoll): string => {
+    try {
+      // Parcourir tous les groupes de dés dans le roll
+      const details: string[] = [];
+      
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      roll.rolls.forEach((rollGroup: any) => {
+        if (rollGroup.rolls && rollGroup.rolls.length > 0) {
+          // Vérifier s'il y a des modificateurs (keep highest, keep lowest, etc.)
+          const hasModifiers = rollGroup.modifiers && rollGroup.modifiers.length > 0;
+          
+          if (hasModifiers) {
+            // Afficher tous les dés lancés et indiquer lesquels sont gardés
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            const diceDisplay = rollGroup.rolls.map((die: any) => {
+              const value = die.value || die.result || die;
+              const isKept = !die.discarded;
+              return isKept ? `**${value}**` : `~~${value}~~`;
+            }).join(', ');
+            
+            details.push(`[${diceDisplay}]`);
+          } else {
+            // Pas de modificateurs, afficher simplement les résultats
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            const diceResults = rollGroup.rolls.map((die: any) => die.value || die.result || die);
+            details.push(`[${diceResults.join(', ')}]`);
+          }
+        }
+      });
+      
+      return details.join(' + ');
+    } catch {
+      // En cas d'erreur, retourner l'output original
+      return roll.output;
+    }
+  };
+
   // Fonction principale de lancer de dés
   const rollDice = async (diceNotation?: string) => {
     const originalNotation = diceNotation || notation;
@@ -178,13 +216,16 @@ export function DiceRoller() {
       
       const roll = new DiceRoll(processedNotation);
       
+      // Générer les détails formatés des dés
+      const diceDetails = formatDiceDetails(roll);
+      
       const result: RollResult = {
         id: Date.now().toString(),
         notation: originalNotation, // Garder la notation originale avec les alias
         result: roll.toString(),
         total: roll.total,
         timestamp: new Date(),
-        output: `${originalNotation} → ${processedNotation}: ${roll.output}`
+        output: `${originalNotation} → ${processedNotation}: ${diceDetails} = ${roll.total}`
       };
 
       setCurrentResult(result);

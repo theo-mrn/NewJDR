@@ -1,0 +1,179 @@
+{
+  "weapons": {
+    "melee": [
+      {
+        "name": "Épée à une main",
+        "description": "Une épée légère et maniable, parfaite pour les combats rapprochés.",
+        "damage": "1d8+2",
+        "rarity": "common"
+      },
+      {
+        "name": "Épée à deux mains",
+        "description": "Une épée massive nécessitant l'usage des deux mains, infligeant des dégâts importants.",
+        "damage": "1d12+3",
+        "rarity": "uncommon"
+      },
+      {
+        "name": "Épée longue",
+        "description": "Une épée de taille moyenne offrant un bon équilibre entre portée et maniabilité.",
+        "damage": "1d8+2",
+        "rarity": "common"
+      },
+      {
+        "name": "Katana",
+        "description": "Une épée japonaise à lame courbe, connue pour sa coupe précise et rapide.",
+        "damage": "1d8+3",
+        "rarity": "rare"
+      },
+      {
+        "name": "Rapière",
+        "description": "Une épée fine et pointue, idéale pour les duels et les coups d'estoc.",
+        "damage": "1d6+2",
+        "rarity": "uncommon"
+      },
+      {
+        "name": "Hache",
+        "description": "Une arme tranchante et lourde, utilisée pour fendre les armures et les boucliers.",
+        "damage": "1d12+3",
+        "rarity": "common"
+      },
+      {
+        "name": "Marteau",
+        "description": "Une arme lourde et contondante, infligeant de grands dégâts par écrasement.",
+        "damage": "1d10+4",
+        "rarity": "uncommon"
+      }
+    ],
+    "ranged": [
+      {
+        "name": "Arc léger",
+        "description": "Un arc facile à manier, permettant des tirs rapides et précis.",
+        "damage": "1d6+1",
+        "rarity": "common"
+      },
+      {
+        "name": "Arbalète",
+        "description": "Une arme de tir puissante et précise, nécessitant un temps de recharge.",
+        "damage": "1d10+2",
+        "rarity": "uncommon"
+      },
+      {
+        "name": "Couteaux de lancer",
+        "description": "De petits couteaux équilibrés pour être lancés avec précision.",
+        "damage": "1d4+1",
+        "rarity": "common"
+      }
+    ]
+  },
+  "armor": [
+    {
+      "name": "Armure légère",
+      "description": "Une armure offrant une protection de base sans entraver les mouvements.",
+      "defense": "+2",
+      "rarity": "common"
+    },
+    {
+      "name": "Armure de cuir",
+      "description": "Une armure souple faite de cuir traité, offrant une bonne protection contre les attaques.",
+      "defense": "+3",
+      "rarity": "common"
+    },
+    {
+      "name": "Armure lourde",
+      "description": "Une armure complète en métal, offrant une protection maximale au détriment de la mobilité.",
+      "defense": "+6",
+      "rarity": "rare"
+    },
+    {
+      "name": "Côte de maille",
+      "description": "Une armure faite de petits anneaux de métal entrelacés, offrant une bonne défense tout en restant flexible.",
+      "defense": "+4",
+      "rarity": "uncommon"
+    }
+  ],
+  "consumables": [
+    {
+      "name": "Petite potion de vie",
+      "description": "Une potion qui soigne instantanément les blessures légères et modérées à la valeur de 1 dé de vie.",
+      "effect": "Soigne 1d8 PV",
+      "rarity": "common"
+    },
+    {
+      "name": "Grande potion de vie",
+      "description": "Une potion qui soigne instantanément les blessures modérées et graves à la valeur de 2 dés de vie.",
+      "effect": "Soigne 2d8 PV",
+      "rarity": "uncommon"
+    },
+    {
+      "name": "Fortifiant",
+      "description": "Une potion renforçant temporairement les capacités physiques.",
+      "effect": "+2 FOR pendant 1h",
+      "rarity": "rare"
+    },
+    {
+      "name": "Potion de dégât",
+      "description": "Une potion infligeant des dégâts à l'ennemi lorsqu'elle est lancée.",
+      "damage": "2d6",
+      "rarity": "uncommon"
+    }
+  ],
+  "currency": [
+    {
+      "name": "Pièce d'or",
+      "description": "Une pièce en or utilisée comme monnaie d'échange.",
+      "value": "1 po",
+      "rarity": "common"
+    },
+    {
+      "name": "Pièce d'argent",
+      "description": "Une pièce en argent utilisée comme monnaie d'échange.",
+      "value": "10 pa = 1 po",
+      "rarity": "common"
+    },
+    {
+      "name": "Pièce de cuivre",
+      "description": "Une pièce en cuivre utilisée comme monnaie d'échange.",
+      "value": "100 pc = 1 po",
+      "rarity": "common"
+    }
+  ],
+  "food": [
+    {
+      "name": "Pain",
+      "description": "Du pain frais, nourrissant et réconfortant.",
+      "effect": "Récupère 1 PV",
+      "rarity": "common"
+    },
+    {
+      "name": "Viande séchée",
+      "description": "De la viande conservée, idéale pour les longs voyages.",
+      "effect": "Sustentation 1 jour",
+      "rarity": "common"
+    },
+    {
+      "name": "Fromage",
+      "description": "Un fromage affiné aux saveurs riches.",
+      "effect": "Récupère 2 PV",
+      "rarity": "common"
+    }
+  ],
+  "misc": [
+    {
+      "name": "Corde",
+      "description": "Une corde solide de 15 mètres.",
+      "rarity": "common"
+    },
+    {
+      "name": "Torche",
+      "description": "Une torche qui éclaire dans un rayon de 6 mètres.",
+      "effect": "Éclairage 1h",
+      "rarity": "common"
+    },
+    {
+      "name": "Kit de crochetage",
+      "description": "Un ensemble d'outils pour crocheter les serrures.",
+      "effect": "+2 aux tests de crochetage",
+      "rarity": "uncommon"
+    }
+  ]
+}
